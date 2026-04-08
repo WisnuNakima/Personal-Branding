@@ -1,0 +1,322 @@
+/* ===== PORTFOLIO SECTION ===== */
+.portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(166, 124, 82, 0.15);
+  border: 2px solid rgba(166, 124, 82, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-12px) rotate(1deg);
+  box-shadow: 0 20px 60px rgba(166, 124, 82, 0.3);
+  border-color: rgba(166, 124, 82, 0.3);
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #f5e6d3 0%, #ead5bb 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.1);
+}
+
+.portfolio-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #a67c52;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  font-weight: 700;
+}
+
+.portfolio-image img + .portfolio-placeholder {
+  display: none;
+}
+
+.portfolio-image.no-image .portfolio-placeholder {
+  display: flex;
+}
+
+.portfolio-placeholder span {
+  font-size: 3rem;
+}
+
+.portfolio-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.portfolio-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a67c52 0%, #8b6f47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.2rem;
+}
+
+.portfolio-description {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #a67c52 0%, #8b6f47 100%);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(166, 124, 82, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.portfolio-link:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.portfolio-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(166, 124, 82, 0.5);
+}
+
+.portfolio-link span {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== PORTFOLIO DOUBLE IMAGE ===== */
+.portfolio-image-double {
+  height: auto;
+  min-height: 280px;
+}
+
+.portfolio-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.portfolio-image-single {
+  position: relative;
+  background: linear-gradient(135deg, #f5e6d3 0%, #ead5bb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+  min-height: 180px;
+}
+
+.portfolio-image-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-image-single:hover img {
+  transform: scale(1.15);
+}
+
+.portfolio-image-single .portfolio-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #a67c52;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.portfolio-image-single img + .portfolio-placeholder {
+  display: none;
+}
+
+.portfolio-image-single.no-image .portfolio-placeholder {
+  display: flex;
+}
+
+.portfolio-image-single .portfolio-placeholder span {
+  font-size: 2.5rem;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(45, 37, 32, 0.97) 0%, rgba(74, 63, 53, 0.97) 100%);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.4s ease;
+  backdrop-filter: blur(12px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+}
+
+@keyframes zoomIn {
+  from { 
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10000;
+  user-select: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #a67c52 0%, #8b6f47 100%);
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(166, 124, 82, 0.5);
+}
+
+.lightbox-close:hover {
+  background: linear-gradient(135deg, #8b6f47 0%, #6b5744 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 12px 35px rgba(166, 124, 82, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .portfolio-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    border-radius: 20px;
+  }
+
+  .portfolio-image {
+    height: 240px;
+  }
+
+  .portfolio-content {
+    padding: 2rem;
+  }
+
+  .lightbox-close {
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .lightbox-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .portfolio-image-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .portfolio-image-single {
+    min-height: 200px;
+  }
+}
