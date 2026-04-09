@@ -50,34 +50,15 @@ body {
   font-weight: 600;
   color: #d4a574;
   padding: 1rem 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #a67c52, #8b6f47);
-  transform: scaleY(0);
-  transition: transform 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: rgba(166, 124, 82, 0.15);
+  background: rgba(166, 124, 82, 0.2);
   color: #fff;
-}
-
-.nav-links a:hover::before,
-.nav-links a.active::before {
-  transform: scaleY(1);
 }
 
 /* ===== SECTION CONTAINER ===== */

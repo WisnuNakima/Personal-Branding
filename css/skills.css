@@ -5,9 +5,9 @@
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   padding: 3rem;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(166, 124, 82, 0.15);
-  border: 2px solid rgba(166, 124, 82, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(166, 124, 82, 0.12);
+  border: 1px solid rgba(166, 124, 82, 0.1);
 }
 
 .skill-item {
@@ -54,26 +54,8 @@
   height: 100%;
   background: linear-gradient(90deg, #a67c52 0%, #8b6f47 50%, #6b5744 100%);
   border-radius: 12px;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(166, 124, 82, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-progress::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  transition: width 1s ease;
+  box-shadow: 0 2px 6px rgba(166, 124, 82, 0.3);
 }
 
 @media (max-width: 768px) {
