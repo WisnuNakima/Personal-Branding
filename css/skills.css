@@ -52,7 +52,7 @@
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, #a67c52 0%, #8b6f47 50%, #6b5744 100%);
+  background: #a67c52;
   border-radius: 12px;
   transition: width 1s ease;
   box-shadow: 0 2px 6px rgba(166, 124, 82, 0.3);
